@@ -60,8 +60,8 @@ public class TakeScreenShots extends Application {
     }
 
 
-    public void Capture2(){
-        View view=  activity.getWindow().getDecorView().getRootView();
+    public void Capture2(View view){
+
 
 
 

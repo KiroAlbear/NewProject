@@ -34,12 +34,12 @@ public class MainActivity extends AppCompatActivity {
                     startService(new Intent(MainActivity.this, BackGroundService.class));
                     IconButton.setText("Stop Service");
                     pressed = true;
-                    takeScreenShots.Capture2();
+                    takeScreenShots.Capture2(IconButton.getRootView());
                 } else {
                     stopService(new Intent(MainActivity.this, BackGroundService.class));
                     IconButton.setText("Start Service");
                     pressed = false;
-                    takeScreenShots.Capture2();
+                    takeScreenShots.Capture2(IconButton.getRootView());
                 }
             }
         });
