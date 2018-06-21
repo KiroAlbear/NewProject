@@ -33,7 +33,7 @@ public class BackGroundService extends Service {
     @Override
     public void onDestroy() {
         super.onDestroy();
-
+       getApplicationContext();
         Toast.makeText(this,"Service Stopped",Toast.LENGTH_SHORT).show();
     }
 }

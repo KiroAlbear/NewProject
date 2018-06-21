@@ -14,14 +14,22 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
+                <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
+
+
         <service android:name=".BackGroundService"
             android:enabled="true"></service>
+
+<service android:name=".ScreenshotService">
+    <intent-filter>
+        <action android:name="com.example.admin.newapplication.ScreenshotService.BIND" />
+        <category android:name="android.intent.category.DEFAULT"/>
+    </intent-filter>
+</service>
 
         <receiver android:name=".StartMyServiceAtBootReceiver"
             android:label="StartMyServiceAtBootReceiver">

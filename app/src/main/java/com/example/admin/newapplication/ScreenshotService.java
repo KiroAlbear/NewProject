@@ -24,7 +24,7 @@ import android.view.*;
 
 
 public class ScreenshotService extends Service {
-	
+
 	/*
 	 * Action name for intent used to bind to service.
 	 */

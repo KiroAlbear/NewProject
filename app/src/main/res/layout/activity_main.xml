@@ -15,4 +15,12 @@
     android:text="Start Service!"
     android:layout_centerInParent="true"
     />
+    <ImageView
+        android:id="@+id/ImageView"
+        android:layout_width="150dp"
+        android:layout_height="200dp"
+        android:layout_below="@id/IconButton"
+        android:layout_centerHorizontal="true">
+
+    </ImageView>
 </RelativeLayout>
