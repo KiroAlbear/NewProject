@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
             aslProvider = IScreenshotProvider.Stub.asInterface(service);
+
         }
     };
 
@@ -61,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
         //intent.addCategory(Intent.ACTION_DEFAULT);
         bindService (intent, aslServiceConn, Context.BIND_AUTO_CREATE);
 
+
         IconButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -68,7 +70,11 @@ public class MainActivity extends AppCompatActivity {
                     startService(new Intent(MainActivity.this, BackGroundService.class));
                     IconButton.setText("Stop Service");
                     pressed = true;
-
+                    try {
+                        aslProvider.takeScreenshot();
+                    } catch (RemoteException e) {
+                        e.printStackTrace();
+                    }
                     try {
                         if (aslProvider == null)
                             Toast.makeText(MainActivity.this, "Message 1", Toast.LENGTH_SHORT).show();

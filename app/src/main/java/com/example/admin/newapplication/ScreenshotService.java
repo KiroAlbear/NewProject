@@ -20,7 +20,7 @@ import android.graphics.Matrix;
 import android.os.*;
 import android.util.Log;
 import android.view.*;
-
+import android.widget.Toast;
 
 
 public class ScreenshotService extends Service {
@@ -73,7 +73,8 @@ public class ScreenshotService extends Service {
 	
 	@Override
 	public void onCreate() {
-		Log.i("service", "Service created."); 
+		Log.i("service", "Service created.");
+		Toast.makeText(getApplicationContext(),"ScreenShotService",Toast.LENGTH_SHORT).show();
 	}
 
 	@Override
